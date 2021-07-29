@@ -20,6 +20,7 @@ export class DisplayErrorComponent implements OnInit {
   }
   set errors(errors: ValidationErrors | null | undefined) {
     this._errors = errors;
+    this.errorMessage = null;
     if (this._errors) {
       this.setErrorMessage(this._errors);
     }

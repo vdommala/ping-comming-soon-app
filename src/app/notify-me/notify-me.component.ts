@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  ValidationErrors,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, ValidationErrors } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { asapScheduler, asyncScheduler, queueScheduler, scheduled } from 'rxjs';
-import { concatAll, debounceTime, startWith } from 'rxjs/Operators';
 
 @Component({
   selector: 'app-notify-me',
@@ -16,22 +9,24 @@ import { concatAll, debounceTime, startWith } from 'rxjs/Operators';
 })
 export class NotifyMeComponent implements OnInit {
   notifyForm!: FormGroup;
-  controlErrors!: ValidationErrors | null;
+  controlErrors!: ValidationErrors | null | undefined;
   get userEmail() {
     return this.notifyForm.controls.userEmail;
   }
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.controlErrors = null;
     this.notifyForm = this.fb.group({
       userEmail: ['', [Validators.required, Validators.email]],
     });
   }
 
   onSubmit(): void {
-    this.controlErrors = null;
+    console.log(this.controlErrors);
+    this.controlErrors = undefined;
+    this.userEmail.updateValueAndValidity();
     if (this.userEmail.untouched) {
+      this.userEmail.markAsTouched({ onlySelf: true });
     }
     if (this.userEmail.hasError('required'))
       this.controlErrors = this.userEmail.errors;
@@ -39,6 +34,7 @@ export class NotifyMeComponent implements OnInit {
       this.controlErrors = this.userEmail.errors;
       this.userEmail.setValue('');
     } else {
+      console.log(this.controlErrors);
       console.log('success');
     }
   }
