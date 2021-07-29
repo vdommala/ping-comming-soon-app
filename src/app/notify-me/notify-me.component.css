@@ -66,8 +66,11 @@
 }
 .control_input:focus-visible,
 .control_input:focus-visible {
-  border: 2px solid var(--primary-blue);
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid var(--primary-blue);
   border-radius: 30px;
+  color: var(--text-dark);
 }
 .control_input_error {
   width: 100%;
