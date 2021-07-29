@@ -1,0 +1,7 @@
+.text-error {
+  display: block;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--secondary-red);
+}

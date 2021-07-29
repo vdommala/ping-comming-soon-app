@@ -1,0 +1,59 @@
+.logo_title {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.logo_title_dark {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.logo_text {
+  font-size: 0.8rem;
+  color: var(--text-dark);
+  font-weight: 300;
+}
+
+.img_dashboard {
+  object-fit: cover;
+}
+
+.footer_text {
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+
+.icon_row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_col .inner_icon {
+  padding: 0.4em 0.6em;
+  border: 1px solid var(--text-light);
+  border-radius: 50%;
+  color: var(--primary-blue);
+  text-align: center;
+  cursor: pointer;
+}
+
+.icon_col .inner_icon:hover {
+  color: white;
+  background: var(--primary-blue);
+}
+
+.icon_col + .icon_col {
+  margin-left: 1em;
+}
+
+@media (min-width: 1000px) {
+  .logo_title {
+    font-size: 2rem;
+    font-stretch: semi-condensed;
+  }
+
+  .logo_text {
+    font-size: 1rem;
+  }
+}

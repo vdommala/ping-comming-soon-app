@@ -1,0 +1,96 @@
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.col {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 700px) and (max-width: 999px) {
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  .col {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .col + .col {
+    margin-left: 1em;
+  }
+
+  .col_2 {
+    flex: 1 0 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .row {
+    display: flex;
+    flex-direction: row;
+    max-width: 50%;
+  }
+
+  .col {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .col + .col {
+    margin-left: 1em;
+  }
+
+  .col_2 {
+    flex: 1 0 60%;
+  }
+}
+
+.control_input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid var(--secondary-blue);
+  border-radius: 30px;
+  color: var(--text-dark);
+}
+.control_input::placeholder {
+  color: var(--text-dark);
+}
+.control_input:focus-visible,
+.control_input:focus-visible {
+  border: 2px solid var(--primary-blue);
+  border-radius: 30px;
+}
+.control_input_error {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid var(--secondary-red);
+  border-radius: 30px;
+  color: var(--text-dark);
+}
+
+.control_input_error::placeholder {
+  color: var(--text-dark);
+}
+
+.primary_btn {
+  width: 100%;
+  height: 90%;
+  border: 2px solid var(--primary-blue);
+  border-radius: 30px;
+  background-color: var(--primary-blue);
+  box-shadow: 0 0.5em 0.5em var(--secondary-blue);
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+}

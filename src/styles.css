@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~normalize.css";
+@import "~font-awesome/css/font-awesome.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100..900&display=swap");
+
+:root {
+  --primary-blue: hsl(223, 87%, 63%);
+  --secondary-blue: hsl(223, 100%, 88%);
+  --secondary-blue-transparent: hsla(223, 100%, 88%, 0.4);
+  --secondary-red: hsl(354, 100%, 66%);
+  --text-light: hsl(0, 0%, 59%);
+  --text-transparent: hsl(0, 0%, 59%);
+  --text-dark: hsl(209, 33%, 12%);
+  --text-size: 20px;
+}
+
+*,
+*::after,
+*::before {
+  --webkit-box-sizing: border-box;
+  --moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Libre Franklin";
+  color: var(--text-light);
+  font-size: var(--text-size);
+}
+h2 {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+input {
+  border: transparent;
+  color: transparent;
+  outline: none;
+}
+
+input::placeholder {
+  color: transparent;
+}
+img {
+  max-width: 100%;
+}
+
+@media (min-width: 1000px) {
+  img {
+    max-width: 50%;
+  }
+}
+
+footer {
+  padding-top: 3em;
+}
+
+.container {
+  margin: 2em auto;
+  max-width: 85%;
+  text-align: center;
+}

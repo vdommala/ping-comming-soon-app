@@ -1,0 +1,27 @@
+<div class="container">
+  <form
+    [formGroup]="notifyForm"
+    (ngSubmit)="onSubmit()"
+    class="container row"
+    data-testid="form"
+    novalidate
+  >
+    <div class="col_2 col">
+      <label class="visuallyhidden" for="userEmail">Email address</label>
+      <input
+        [ngClass]="{
+          control_input: !controlErrors,
+          control_input_error: controlErrors
+        }"
+        type="email"
+        id="userEmailId"
+        formControlName="userEmail"
+        appErrorMessage="email-errors"
+        placeholder="Your email address.."
+      />
+      <app-display-error id="email-errors" [errors]="controlErrors">
+      </app-display-error>
+    </div>
+    <button class="primary_btn col" type="submit">Notify Me</button>
+  </form>
+</div>
